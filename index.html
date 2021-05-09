@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+    <style>
+       .main-container{
+
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .wrap {
+            flex-grow: 1;
+        }
+
+        #footer {
+            height: 200px;
+        }
+
+        .title {
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 1rem;
+            font-size: 1.25rem;
+            text-decoration: none;
+            white-space: nowrap;
+            color: rgba(0, 0, 0, .9);
+
+        }
+
+        .title-background {
+            background-color: #f8f9fa !important;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                The Playfair Cipher Encryption Algorithm
+            </a>
+        </div>
+    </nav>
+    <div class="container wrap">
+        <div class="pt-5">
+            <p>
+                Input a keyword below to seed the key table. All keywords are
+                converted to uppercase and should contain only alphabetic characters.
+                Any non-alphabetic characters and duplicate characters are
+                automatically stripped. The key table is filled in with the rest of
+                the unused alphabet.
+            </p>
+        </div>
+        <div>
+
+            <legend>Encription Key</legend>
+            <div class="mb-3">
+                <label for="disabledTextInput" class="form-label"> Enter Key </label>
+                <input type="text" id="keyword" value="Hello World" class="form-control" style="width: 400px" />
+            </div>
+            <button id="generateKeytable" class="btn btn-primary">
+                Generate Key Table
+            </button>
+            <button id="regenerateKeytable" style="display: none">
+                Regenerate Key Table
+            </button>
+        </div>
+        <span id="AfterGen" style="display: none">
+            <div id="keyTable"></div>
+            <p>
+                Note: The letter J is replaced with the letter I in all digraphs. A
+                digraph is what we convert your plain text message to. It is a pairing
+                of letters, with X used to break up duplicate letters and to pad
+                uneven pairs. The spacing is not retained once the plain text is
+                converted to a digraph.
+            </p>
+
+            <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="en"
+                    style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Text you want to Encrypt</label>
+            </div>
+
+            <button class="btn btn-primary" id="encipher">Encipher</button>
+
+            <div class="form-floating mt-5">
+                <textarea class="form-control" placeholder="Leave a comment here" id="de"
+                    style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Encrypted Text</label>
+            </div>
+            <div style="height: 100px"></div>
+        </span>
+
+    </div>
+    <div class="d-flex flex-row-reverse bd-highlight" id="footer">
+        <div>
+
+            <div class="col align-self-end p-2 bd-highlight title-background">
+                <h4 class="title">
+
+                    Designed and Implemented by
+            </div>
+            </h4>
+            <div class="col align-self-end p-2 bd-highlight">
+                <ul>
+                    <li>Liben Hailu  ATR/8517/10 </li>
+                    <li>
+                        Benyam Simayehu ATR/9793/10
+                    </li>
+                    <li>
+
+                        Esayas Gidey ATR/8452/10
+                    </li>
+                    <li>
+
+                        Milka Hailu ATR/0536/10
+                    </li>
+                    <li>Yenework Tamerat ATR/7142/10</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script src="index.js"></script>
+</body>
+
+</html>
